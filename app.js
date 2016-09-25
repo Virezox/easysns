@@ -3,6 +3,7 @@ var contollers = require('./controllers')
 var parseUrl = require('url').parse
 
 const rules = [
+  {path: '/play', controller: contollers.play},
   {path: '/', controller: contollers.home},
   {path: '/user', controller: contollers.user},
   {path: '/auth/register', controller: contollers.auth.register, method: 'post'},
