@@ -5,6 +5,8 @@ var parseUrl = require('url').parse
 const rules = [
   {path: '/', controller: contollers.home},
   {path: '/user', controller: contollers.user},
+  {path: '/auth/register', controller: contollers.auth.register, method: 'post'},
+  {path: '/auth/login', controller: contollers.auth.login, method: 'post'},
   {path: /^\/static(\/.*)/, controller: contollers.static}
 ]
 
@@ -23,6 +25,11 @@ var server = http.createServer(function (req, res) {
   var urlInfo = parseUrl(req.url)
 
   var rule = find(rules, function (rule) {
+    if (rule.method) {
+      if (rule.method.toLowerCase() !== req.method.toLowerCase()) {
+        return false
+      }
+    }
     if (rule.path instanceof RegExp) {
       var matchResult = urlInfo.pathname.match(rule.path)
       if (matchResult) {
