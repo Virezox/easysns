@@ -14,13 +14,10 @@ function generateToken (userId, callback) {
 }
 
 function doLogin (userId, res) {
-  console.log('doLogin run')
   generateToken(userId, function (err, token) {
     if (err) {
-      console.log('error occured')
       return send.sendError(err, res)
     }
-    console.log('success set cookie')
     res.writeHead(302, {
       'Set-Cookie': 'token=' + token + '; path=/; Http Only',
       location: '/'
