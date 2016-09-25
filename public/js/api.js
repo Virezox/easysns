@@ -1,4 +1,4 @@
-/* global FormData fetch*/
+/* global FormData fetch */
 ;(function (root, factory) {
   root.API = factory()
 }(this, function () {
@@ -103,7 +103,7 @@
     req.page = page
     req.limit = limit
     console.dir(req)
-    callback(null, [/*{
+    callback(null, [/* {
       avatar: 'http://localhost:3000/static/img/nodejs.png',
       nickname: 'User 1',
       content: '内容1'
@@ -111,13 +111,13 @@
       avatar: 'http://localhost:3000/static/img/nodejs.png',
       nickname: 'User 2',
       content: '内容2'
-    }*/])
+    } */])
   }
 
   // 获取用户列表
   api.getNewUsers = function (req, callback) {
     console.dir(req)
-    callback(null, [/*{
+    callback(null, [/* {
       avatar: 'http://localhost:3000/static/img/nodejs.png',
       nickname: 'User a',
       userId: '3',
@@ -127,7 +127,7 @@
       nickname: 'User b',
       userId: '4',
       isFollow: false
-    }*/])
+    } */])
   }
 
   return api
