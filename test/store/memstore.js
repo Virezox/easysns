@@ -1,3 +1,12 @@
+var testStore = require('./store_test').testStore
+const MemStore = require('../../store/memstore')
+
+var memStore = new MemStore()
+
+testStore('MemStore', memStore)
+
+// Old test case
+/*
 const assert = require('assert')
 const runner = require('../runner')
 const MemStore = require('../../store/memstore')
@@ -48,3 +57,4 @@ function testDel (done) {
     })
   })
 }
+*/

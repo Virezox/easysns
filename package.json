@@ -5,11 +5,12 @@
   "description": "一个简易的微博系统",
   "main": "index.js",
   "scripts": {
-    "test": "standard && mocha --recursive"
+    "test": "mocha -r babel-register --recursive"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chai": "^3.5.0",
     "koa-bodyparser": "^3.2.0",
     "koa-json": "^2.0.2",
     "koa-logger": "^2.0.0",
